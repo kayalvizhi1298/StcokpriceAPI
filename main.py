@@ -4,7 +4,7 @@ from fastapi import FastAPI
 import requests
 # import uvicorn
 from bs4 import BeautifulSoup
-import json
+
 
 app = FastAPI()
 @app.get('/stock')
@@ -40,7 +40,7 @@ def get_data():
     
     
     data = {}
-    
+    import json
     for ticker in tickers:
         analysis = analytics_scrapper(ticker)
         data[ticker] = analysis
