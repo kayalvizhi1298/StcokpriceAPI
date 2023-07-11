@@ -4,8 +4,6 @@ from fastapi import FastAPI
 import requests
 # import uvicorn
 from bs4 import BeautifulSoup
-
-
 app = FastAPI()
 @app.get('/stock')
 def analytics_scrapper(ticker:str):
@@ -26,8 +24,6 @@ def analytics_scrapper(ticker:str):
         secondvalue=' '.join(firstvalue)
         analysis[key] = secondvalue
     return analysis
-
-
 @app.get('/get_stock')
 def get_data():
     tickers = ['ADANIPORTS', 'ASIANPAINT', 'AXISBANK', 'BAJAJ-AUTO', 'BAJFINANCE', 'BAJAJFINSV', 'BHARTIARTL', 'BPCL',
@@ -36,9 +32,6 @@ def get_data():
                'JSWSTEEL', 'KOTAKBANK', 'LT', 'M&M', 'MARUTI', 'NESTLEIND', 'NTPC', 'ONGC', 'POWERGRID', 'RELIANCE',
                'SBILIFE', 'SHREECEM', 'SBIN', 'SUNPHARMA', 'TCS', 'TATAMOTORS', 'TATASTEEL', 'TATACONSUM', 'TECHM', 'TITAN',
                'ULTRACEMCO', 'UPL', 'WIPRO']
-    
-    
-    
     data = {}
     import json
     for ticker in tickers:
